@@ -19,20 +19,18 @@
 # Libraries and variables
 import random
 import os
-os.system("cls")
 
-# compute random guess for comp_comp_number using random
-comp_number = random.randint(0, 4)
-comp_choice = ''
+os.system("cls") #clean screen
 
-#Contadores con valores de inicio
-player_number = 0
+#initial values for counters
 
-# mensajes de inicio
+# Starting messages
 print("Welcome to Rock-paper-scissors-lizard-Spock")
 os.system("pause") #Pasa a la siguiente pantalla
+os.system("cls") #limpia la pantalla
 
-# helper functions
+
+# functions
 
 # convert the player_choice to player_number using the function player_choice_to_player_number()
 def player_choice_to_player_number(player_choice):
@@ -70,7 +68,8 @@ def comp_number_to_comp_choice(comp_number):
     return comp_choice
 
 def rpsls(player_choice): 
-    # delete the following pass statement and fill in your code below
+    # compute random guess for comp_comp_number using random
+    comp_number = random.randint(0, 4)
     player_number = player_choice_to_player_number(player_choice)
     
     # print out the message for the player's choice
@@ -85,7 +84,7 @@ def rpsls(player_choice):
     # use if/elif/else to determine winner, print winner message
     if result == 0:
         print('Player and computer tie!')
-    if result < 0:
+    elif result == 1 or result == 2:
         print('Computer wins!')
     else:
         print('Player wins!')
@@ -93,8 +92,10 @@ def rpsls(player_choice):
     print()
        
 # test code with different calls
+# os.system("cls") #limpia la pantalla
 rpsls('rock')
 rpsls('spock')
 rpsls('paper')
 rpsls('lizard')
 rpsls('scissors')
+# print("----------")
