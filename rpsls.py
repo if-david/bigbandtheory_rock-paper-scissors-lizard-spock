@@ -129,11 +129,3 @@ while (player_victories < 3) and (comp_victories < 3):
     
     # call the rpsls function to play the round
     rpsls(player_choice)
-    
-# test code with different calls
-# rpsls('rock')
-# rpsls('spock')
-# rpsls('paper')
-# rpsls('lizard')
-# rpsls('scissors')
-# print("----------")
