@@ -54,7 +54,7 @@ while (player_victories < 3) and (comp_victories < 3):
     
     # Verifies that player's inpuit is a valid choice
     if not player_choice in options:
-        print("POR FAVOR ELIGE UNA OPCIÓN VÁLIDA! \n")
+        print("PLEASE ENTER A VALID CHOICE! \n")
         os.system("pause") # next screen
         continue
     
