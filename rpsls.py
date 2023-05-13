@@ -1,4 +1,5 @@
 '''
+Use this values and rules to set the game logic
 Values: 
 0 - rock
 1 - Spock
