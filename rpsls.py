@@ -39,7 +39,7 @@ os.system("pause") # next screen
 # Game cycle
 while (player_victories < 3) and (comp_victories < 3):
     # New round starting screen
-    # os.system("cls") # clean screen
+    os.system("cls") # clean screen
     
     # Prints score
     print(f"\nThe computer has {comp_victories} wins")
@@ -50,9 +50,9 @@ while (player_victories < 3) and (comp_victories < 3):
     
     # Player choice
     player_choice = input("What do you choose? ").lower()    
-    os.system("cls") # clean screen
+    # os.system("cls") # clean screen
     
-    # Verifies that player's inpuit is a valid choice
+    # Verifies that player's input is a valid choice
     if not player_choice in options:
         print("PLEASE ENTER A VALID CHOICE! \n")
         os.system("pause") # next screen
@@ -73,7 +73,7 @@ while (player_victories < 3) and (comp_victories < 3):
         else:
             print("Please enter a valid choice! \n")
             player_number = None
-        # don't forget to return the result!
+        # don't forget to return player_number!
         return player_number
 
     def rpsls(player_choice):         
@@ -83,8 +83,8 @@ while (player_victories < 3) and (comp_victories < 3):
         # convert player_choice to player_number
         player_number = choice_to_number(player_choice)
         
-        # print out the message for the player's choice
-        print(f'Player chooses {player_choice}')
+        # print out the message for the player's choice        
+        print(f'\nPlayer chooses {player_choice}')
         
         # compute random guess for comp_choice
         comp_choice = random.choice(options)
@@ -101,12 +101,15 @@ while (player_victories < 3) and (comp_victories < 3):
         
         # use if/elif/else to determine winner, print winner message
         if result == 0:
-            print('Player and computer tie!')
+            print('Player and computer tie!\n')
+            os.system("pause") # next screen
         elif result > 2:
-            print('Computer wins!')
+            print('Computer wins!\n')
+            os.system("pause") # next screen
             comp_victories = comp_victories + 1
         else:
-            print('Player wins!')
+            print('Player wins!\n')
+            os.system("pause") # next screen
             player_victories = player_victories + 1
         # print a blank line to separate consecutive games
         print()
@@ -115,15 +118,13 @@ while (player_victories < 3) and (comp_victories < 3):
         round_number = round_number + 1
         
         # Returns the updated values of player_victories, comp_victories, and round_number
-        return player_victories, comp_victories, round_number
-
-# Stops the game when player or computer obtains 3 victories
+        # return player_victories, comp_victories, round_number
+        
+        # Stops the game when player or computer obtains 3 victories
     if comp_victories == 3:
-        # os.system("cls") #clean screen
         print(f"Computer has obtained {comp_victories} victories \nYOU HAVE LOST! HAHAHA")
         break
     elif player_victories == 3:
-        # os.system("cls") #clean screen
         print(f"CONGRATULATIONS!!! you have obtained {player_victories} victories \n¡You are smarter than you seem!")
         break
     
